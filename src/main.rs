@@ -3,7 +3,7 @@ extern crate rand;
 use rand::Rng;
 
 fn main() {
-    let range: i32 = 10000000;
+    let range: i32 = 1000000;
     let mut cnt: i32 = 0;
     // generate 100 random number coordinates
     for _cnt in 0..range {
@@ -20,8 +20,7 @@ fn main() {
 
 fn judge(x: f64, y: f64) -> bool {
     let xplusy = x.powf(2.0) + y.powf(2.0);
-    let distance = xplusy.sqrt();
-    if distance >= 1.0 {
+    if xplusy > 1.0 {
         return false;
     }
     return true;
